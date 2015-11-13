@@ -1,0 +1,191 @@
+/* New Checkout summary page */
+
+.summary-payment-content{
+  padding: 48px 48px 0;
+}
+@media (min-width: 641px){
+  .payment-method-form {
+      max-width: 312px;
+      margin: auto;
+     /* padding: 0 0 48px 0;*/
+  }
+}
+.payment-method-form .security-code{font-size: 11px;}
+
+.payment-method-form .top-margin{margin-top: 45px;}
+.payment-method-form .tbs-form .security-label{margin-top: 45px;}
+
+.checkout-date li {display: inline-block;   margin-top: 10px;}
+
+.checkout-date-day{
+  width: 30%; 
+}
+.checkout-date-year{
+  width: 30%; 
+  margin-left: 10px;  
+}
+.payment-method-form .tbs-form .security-code{width: 85px;}
+
+.checkout-summary .payment-method-summary .basket-summary .continue-checkout{z-index: 999;}
+.payment-method-summary header.lybc-header{padding-top: 0px;}
+.payment-method-form  .selectboxit-container .selectboxit-text{
+  padding-right: 30px;
+  padding-left: 20px;
+}
+@media (max-width: 641px){
+  .payment-method-summary .sticky-sidebar{margin-top: 40px;}
+}
+.payment-method-form .payment-card-container{
+  height: 47px;
+  margin-bottom: 50px;
+}
+
+
+.payment-method-form .payment-card-container ul li{
+  display: inline-block; 
+  padding-right: 10px;
+}
+@media (max-width: 889px){
+
+  .payment-method-form .payment-card-container ul li:last-child{
+    padding-top: 12px;
+  }
+}
+.payment-method-form .payment-card-container img{
+  height: 56px;
+  width: 56px;
+}
+/* to Grayout unselected*/
+.payment-method-form .payment-card-container img.false{
+  filter: grayscale(20%);
+  -webkit-filter: grayscale(100%);
+}
+.payment-method-form .payment-card-container img.true{}
+.payment-method-form .payment-card-container img.visa, 
+.payment-method-form .payment-card-container img.master, 
+.payment-method-form .payment-card-container img.maestro, 
+.payment-method-form .payment-card-container img.amex, 
+.payment-method-form .payment-card-container img.discover, 
+.payment-method-form .payment-card-container img.den
+{
+  filter: grayscale(0);
+  -webkit-filter: grayscale(0);
+}
+
+
+.payment-method-form .payment-card-container img.denkort{
+  width: 56px; 
+  height: 36px; 
+  position: relative; 
+  top: -10px;
+}
+
+
+.security-card-container li{
+  display: inline-block; 
+  padding-right: 10px;
+}
+.security-card-container li input[type='text']{margin-top: 0;}
+.security-card-container li img.amex, .security-card-container li img.visa {
+  width: 77px; 
+  position: relative; 
+  top: 19px;
+}
+
+.payment-method-summary .sticky-sidebar .basket-summary ul.total > li:nth-child(6){margin: 0 15px;}
+
+.payment-method-summary .checkout-billing .summary-delivery-content ul{ /*margin-left: 50px;*/}
+
+.ideal-card-container{
+  margin-bottom: 40px; 
+  display: inline-block;
+}
+.ideal-card-container ul{display: inline-block;}
+.ideal-card-container ul li img.ideal{width: 77px;}
+#iDeal .ideal-card-lable{
+  display: inline-block; 
+  line-height: 47px; 
+  vertical-align: top; 
+  margin-right: 25px;
+}
+#iDeal .tbs-dropdown-container{margin-bottom: 40px;}
+.ideal-container{}
+.ideal-container .input-container{
+  display: inline-block; 
+  float: left; 
+  margin-right: 25px;
+}
+.input-container input[type='text']{ margin-bottom: 0;}
+.ideal-container .ideal-text{
+  width: 70%; 
+  display: inline-block;
+  margin-top: 8px;
+}
+
+@media (width: 320px){
+   .payment-method-form .payment-card-container{margin-bottom: 80px;}
+   .ideal-container .ideal-text{width: 65%;}
+}
+@media (min-width: 641px){
+  .payment-method-form .payment-card-container{margin-bottom: 75px;}
+   .ideal-container .ideal-text{width: 65%;}
+}
+@media (max-width: 400px){
+  .payment-method-form .payment-card-container{
+    margin-bottom: 65px;
+  }
+}
+.ideal-container .checkbox-row .checkbox-chkemail-label{   display: table-cell;
+    vertical-align: middle;
+    padding-left: 0px;}
+
+.payment-method-summary .use-your-voucher .use-your-voucher-content .btn-apply-voucher{margin-top: 0; margin-bottom: 0;}
+
+.payment-method-header{padding:36px 0 38px 0}
+
+.payment-method-summary .address .billing {
+    background-image: url('/_ui/responsive/theme-tbs/assets/svg/icon-billing-address.svg');
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 20px;
+    width: 22px;
+    height: 20px;
+    position: relative;
+    top: 3px;
+    margin: 0 10px 0 12px;
+}
+.payment-method-form.tbs-form .tbs-dropdown-container{margin-bottom: 0;}
+
+/* Price per unit in CR 77*/
+.payment-method-summary .single-product .price-container {
+  position: absolute;
+  bottom: 36px;
+  line-height: 20px;
+}
+.payment-method-summary .single-product .price-container .now {
+  line-height: normal;
+}
+.payment-method-summary .single-product .price-container p {
+  margin-bottom: -12px;
+}
+@media (min-width: 1025px) {
+  .payment-method-summary .single-product .price-container {
+    right: 48px;
+  }
+}
+@media (min-width: 520px){
+  .payment-method-summary .single-product .price-container {
+    padding-left: 35%;
+  }  
+
+}
+@media (max-width: 640px){
+  #iDeal .ideal-card-lable{
+    padding-left: 80px;
+  }  
+  #payPal{text-align: center; padding-left: 10px; padding-right: 10px;}
+}
+
+/* Payby dropdown first value is blank and hidden on page load */
+.payment-method-form .selectboxit-container .primary-dropdown.payby-dropdown + .selectboxit-options li:first-child{display: none;}

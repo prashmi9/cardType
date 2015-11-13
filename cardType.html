@@ -1,0 +1,94 @@
+<div class="checkout-delivery-content delivery-address" ng-controller="paymentMethodForm">
+                	<div class="delivery-method method-and-delivery">
+						<div class="payment-method-form tbs-form" style="max-width: 415px;">
+								<div class="dropdown-container with-label tbs-dropdown-container">
+									<span class="dropdown-label" aria-label="Delivery method selector">
+										Pay by:</span>
+									<select name="paymentmethod" ng-model="payment.paymentmethod" class="primary-dropdown payby-dropdown" id="paymentmethoddropdown" tbs-select-box-it>
+										<option value="select" ng-option aria-label="Select" selected disabled hidden></option>
+										<option value="credit" ng-option aria-label="Credit Card"> Card</option>
+										<option value="paypal" ng-option aria-label="PayPal">PayPal</option>
+										<option value="iDeal" ng-option aria-label="iDeal" >iDeal</option>
+										
+									</select>
+									<%-- <c:forEach items="${paymentModes}" var="paymentMode">
+										<c:if test="${paymentMode.primary and paymentMode.active == true}">
+											<option value="${paymentMode.method}" aria-label="${paymentMode.method}">${paymentMode.name}</option>
+										</c:if>
+									</c:forEach> --%>
+								</div>
+								
+							<div class="tbs-form top-margin" name="delivery-method" id="Credit" ><!--   -->
+								<label for="payment-method-card-type">
+									Accepted Card Type</label>
+									<div  class="payment-card-container">
+										<ul>
+										<li><img src="${themeResourcePath}/assets/img/paymentcards/visa.png" alt="" class="{{!ccinfo.type}}" ng-class="{'visa': ccinfo.type && ccinfo.type == 'visa'}"/></li>
+										<li><img src="${themeResourcePath}/assets/img/paymentcards/mastercard.png" alt="" class="{{!ccinfo.type}}" ng-class="{'master': ccinfo.type && ccinfo.type == 'mastercard'}"/></li>
+										<li><img src="${themeResourcePath}/assets/img/paymentcards/maestro.png" alt="" class="{{!ccinfo.type}}" ng-class="{'maestro': ccinfo.type=='maestro'}"/></li>
+										<li><img src="${themeResourcePath}/assets/img/paymentcards/americanexpress.png" alt="" class="{{!ccinfo.type}}" ng-class="{'amex': ccinfo.type=='americanexp'}"/></li>
+										<li><img src="${themeResourcePath}/assets/img/paymentcards/discover.png" alt="" class="{{!ccinfo.type}}" ng-class="{'discover': ccinfo.type=='discover'}"/></li>
+										<li><img src="${themeResourcePath}/assets/img/paymentcards/dankort.png" alt="" class="denkort {{!ccinfo.type}}" ng-class="{'den': ccinfo.type=='denkort'}"/></li> <!-- filter-unselected -->
+										</ul>
+										
+									</div>
+								
+								
+								<label for="payment-method-cardholder-name">
+									Card holder name</label>
+								<input id="payment-method-cardholder-name" name="paymentMethodCardholderName" ng-model="paymentMethodCardholderName"   type="text" required="required" value="">
+								<div class="error-container ng-hide" ng-show="basketContinue['paymentMethodCardholderName'].$dirty">
+									<small class="error" ng-show="basketContinue['paymentMethodCardholderName'].$error.required">
+										This field is required</small>
+								</div>
+								<label for="payment-method-card-number">
+									Card Number</label>
+								<input 
+								id="payment-method-card-number" 
+								tbs-credit-card-type 
+								name="paymentMethodCardNumber" 
+								ng-model="paymentMethodCardNumber" 
+								ng-pattern="/^[0-9]+$/"
+								ng-minlength="15" 
+								maxlength="19" 
+								required 
+								type="text" 
+								value="" >
+								{{ccinfo.type}}
+								<div class="error-container ng-hide" ng-show="basketContinue['paymentMethodCardNumber'].$dirty">
+									<small class="error" ng-show="basketContinue['paymentMethodCardNumber'].$error.required">
+										This field is required</small>
+								</div>
+								
+								
+								
+								
+								<div ng-if="paymentMethodCardNumber == '1234'" style="margin-top: 48px;">
+									<label for="payment-method-card-number">
+									Issue Number</label>
+									<input id="payment-method-issue-number" name="paymentMethodIssueNumber" ng-model="paymentMethodIssueNumber" type="text" value="" style="margin-bottom:0">
+									<!-- <div class="error-container ng-hide" ng-show="basketContinue['paymentMethodIssueNumber'].$dirty">
+										<small class="error" ng-show="basketContinue['paymentMethodIssueNumber'].$error.required">
+										This field is required</small>
+									</div> -->
+								</div>
+								
+								<label for="payment-method-security-code" class="security-label">
+										Security Code<br><span class="security-code">3 on back; Amex 4 on front</span></label>
+									<ul class="security-card-container">
+										<li>
+											<input id="payment-method-security-code" name="paymentMethodSecurityCode" ng-model="paymentMethodSecurityCode" required type="text" min="0" maxlength="4" class="security-code" value="">
+										</li>
+										<li><img src="${themeResourcePath}/assets/img/paymentcards/visaDisc.gif" alt="" class="visa"/></li>
+										<li><img src="${themeResourcePath}/assets/img/paymentcards/amex.gif" alt="" class="amex"/></li>
+										
+									</ul>
+									<div class="error-container ng-hide" ng-show="basketContinue['paymentMethodSecurityCode'].$dirty">
+										<small class="error" ng-show="basketContinue['paymentMethodSecurityCode'].$error.required">
+										This field is required</small>
+									</div>
+																	
+							</div>
+						</div>
+                	</div>
+                </div>
